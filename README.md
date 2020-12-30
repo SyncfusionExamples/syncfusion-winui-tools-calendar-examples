@@ -3,7 +3,7 @@ This repository contains the samples that demonstrate the functionalities of Win
 
 <table>
  <tr>
-  <td><a href="Samples/Getting_Started">Getting Started</a></td>
+  <td><a href="Samples/Getting_started">Getting Started</a></td>
   <td><a href="Samples/Restriction">Select the date programmatically</a></td>
   <td><a href="Samples/Selection">Select multiple dates</a></td>
   <td><a href="Samples/Restriction">Restrict date selection</a></td>
@@ -12,7 +12,7 @@ This repository contains the samples that demonstrate the functionalities of Win
   <td><a href="Samples/BlockedDates">Block dates using BlackoutDates</a></td>
   <td><a href="Samples/CustomUI">Custom UI for specific cell in Calendar</a></td>
   <td><a href="Samples/Formatting">Disable/block all weekends</a></td>
-  <td><a href="Samples/MinDisplayMode">Navigate between views</a></td>
+  <td><a href="Samples/Restriction">Navigate between views</a></td>
  </tr>
   <tr>
   <td><a href="Samples/Selection">First day of week</a></td>
