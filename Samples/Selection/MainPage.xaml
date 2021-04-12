@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:calendar="using:Syncfusion.UI.Xaml.Calendar"
-    xmlns:core="using:Syncfusion.UI.Xaml.Core.Extensions"
+    xmlns:core="using:Syncfusion.UI.Xaml.Core"
     xmlns:sys="using:System"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -23,7 +23,7 @@
         <calendar:SfCalendar
             Name="sfCalendar"
             SelectionMode="{Binding SelectionMode, Mode=TwoWay}"
-            TodayHighlightMode="{Binding TodayHighlightMode, Mode=TwoWay}"
+            SelectionShape="{Binding SelectionShape, Mode=TwoWay}"
             SelectionHighlightMode="{Binding SelectionHighlightMode, Mode=TwoWay}"
             NumberOfWeeksInView="{Binding NumberOfWeeksInView, Mode=TwoWay}"
             FirstDayOfWeek="{Binding FirstDayOfWeek, Mode=TwoWay}"/>
@@ -42,17 +42,17 @@
                 <ComboBox
                     Margin="5"
                     Width="180"
-                    Header="TodayHighlightMode"
-                    SelectedItem="{Binding TodayHighlightMode, Mode=TwoWay}"
+                    Header="SelectionShape"
+                    SelectedItem="{Binding SelectionShape, Mode=TwoWay}"
                     HorizontalAlignment="Center"
-                    ItemsSource="{core:EnumValuesExtension Type=calendar:CalendarItemHighlightMode}"/>
+                    ItemsSource="{core:EnumValuesExtension Type=calendar:SelectionShape}"/>
                 <ComboBox
                     Margin="5"
                     Width="180"
                     Header="SelectionHighlightMode"
                     SelectedItem="{Binding SelectionHighlightMode, Mode=TwoWay}"
                     HorizontalAlignment="Center"
-                    ItemsSource="{core:EnumValuesExtension Type=calendar:CalendarItemHighlightMode}"/>
+                    ItemsSource="{core:EnumValuesExtension Type=calendar:SelectionHighlightMode}"/>
                 <ComboBox
                     Margin="5"
                     Width="180"

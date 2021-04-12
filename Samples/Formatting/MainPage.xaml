@@ -5,13 +5,13 @@
     xmlns:local="using:Formatting"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:calendar="using:Syncfusion.UI.Xaml.Calendar" 
-    xmlns:core="using:Syncfusion.UI.Xaml.Core.Extensions"
-    xmlns:converter="using:Syncfusion.UI.Xaml.Core.Extensions"
+    xmlns:converter="using:Syncfusion.UI.Xaml.Core" 
+    xmlns:calendar="using:Syncfusion.UI.Xaml.Calendar"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
     <Page.DataContext>
-        <local:CalendarViewModel/>       
+        <local:CalendarViewModel/>
     </Page.DataContext>
     <Page.Resources>
         <converter:EnumDisplayNameConverter x:Key="enumDisplayNameConverter"/>
@@ -43,7 +43,7 @@
                                       ConverterParameter='dayofweek', 
                                       Mode=TwoWay,
                                       Converter={StaticResource dateFormatToDisplayFormatConverter}}"
-            HeaderFormatInMonthView="{Binding HeaderFormatInMonthView, 
+            MonthHeaderFormat="{Binding HeaderFormatInMonthView, 
                                               ConverterParameter='header', 
                                               Mode=TwoWay,
                                               Converter={StaticResource dateFormatToDisplayFormatConverter}}"/>
@@ -110,7 +110,7 @@
                     Width="180"
                     Header="FlowDirection" 
                     ItemTemplate="{StaticResource comboboxItemTemplate}"
-                    ItemsSource="{core:EnumValuesExtension Type=FlowDirection}"
+                    ItemsSource="{converter:EnumValuesExtension Type=FlowDirection}"
                     SelectedItem="{Binding FlowDirection, Mode=TwoWay}"/>
             </StackPanel>
         </ScrollViewer>

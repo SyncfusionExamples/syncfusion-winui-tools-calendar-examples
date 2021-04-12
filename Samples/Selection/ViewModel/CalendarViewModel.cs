@@ -1,29 +1,31 @@
 ﻿using Syncfusion.UI.Xaml.Calendar;
 using Syncfusion.UI.Xaml.Core;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Selection
 {
     class CalendarViewModel : NotificationObject
     {
-        private CalendarSelectionMode selectionMode =  CalendarSelectionMode.Single;
-        private CalendarItemHighlightMode todayHighlightMode = CalendarItemHighlightMode.FilledRectangle;
-        private CalendarItemHighlightMode selectionHighlightMode = CalendarItemHighlightMode.Rectangle;
-        private DayOfWeek firstDayOfWeek =  DayOfWeek.Sunday;
-        private int numberOfWeeksInView =  6;
+        private CalendarSelectionMode selectionMode = CalendarSelectionMode.Single;
+        private SelectionHighlightMode selectionHighlightMode = Syncfusion.UI.Xaml.Calendar.SelectionHighlightMode.Filled;
+        private DayOfWeek firstDayOfWeek = DayOfWeek.Sunday;
+        private int numberOfWeeksInView = 6;
+        private SelectionShape selectionShape = SelectionShape.Circle;
 
-        
-
-        public CalendarItemHighlightMode TodayHighlightMode
+        public SelectionShape SelectionShape
         {
             get
             {
-                return todayHighlightMode;
+                return selectionShape;
             }
             set
             {
-                todayHighlightMode = value;
-                this.RaisePropertyChanged(nameof(TodayHighlightMode));
+                selectionShape = value;
+                this.RaisePropertyChanged(nameof(SelectionShape));
             }
         }
 
@@ -40,7 +42,7 @@ namespace Selection
             }
         }
 
-        public CalendarItemHighlightMode SelectionHighlightMode
+        public SelectionHighlightMode SelectionHighlightMode
         {
             get
             {
@@ -52,7 +54,7 @@ namespace Selection
                 this.RaisePropertyChanged(nameof(SelectionHighlightMode));
             }
         }
-        
+
         public DayOfWeek FirstDayOfWeek
         {
             get
@@ -65,7 +67,7 @@ namespace Selection
                 this.RaisePropertyChanged(nameof(FirstDayOfWeek));
             }
         }
-        
+
         public int NumberOfWeeksInView
         {
             get

@@ -3,6 +3,9 @@ using Syncfusion.UI.Xaml.Core;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Formatting
 {
@@ -13,7 +16,7 @@ namespace Formatting
         private string dayOfWeekFormat = "Abbreviated - 3 char";
         private string headerFormatInMonthView = "Full";
         private string calendarIdentifier = "GregorianCalendar";
-        private FlowDirection flowDirection= FlowDirection.LeftToRight;
+        private FlowDirection flowDirection = FlowDirection.LeftToRight;
 
         public List<LanguageList.Language> Languages { get; set; }
         public ObservableCollection<string> Items { get; set; }
@@ -33,7 +36,7 @@ namespace Formatting
                 }
             }
         }
-        
+
         public FlowDirection FlowDirection
         {
             get
@@ -64,7 +67,7 @@ namespace Formatting
                 }
             }
         }
-        
+
         public string MonthFormat
         {
             get
@@ -80,7 +83,7 @@ namespace Formatting
                 }
             }
         }
-        
+
         public string DayOfWeekFormat
         {
             get
@@ -95,7 +98,7 @@ namespace Formatting
                     this.RaisePropertyChanged(nameof(this.DayOfWeekFormat));
                 }
             }
-        } 
+        }
 
         public string HeaderFormatInMonthView
         {

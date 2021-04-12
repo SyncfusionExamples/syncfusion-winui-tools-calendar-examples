@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Restriction"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:core="using:Syncfusion.UI.Xaml.Core.Extensions" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:core="using:Syncfusion.UI.Xaml.Core" 
     xmlns:calendar="using:Syncfusion.UI.Xaml.Calendar"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -13,7 +13,12 @@
     <Page.DataContext>
         <local:CalendarViewModel/>
     </Page.DataContext>
-
+    <Page.Resources>
+        <core:EnumDisplayNameConverter x:Key="enumDisplayNameConverter"/>
+        <DataTemplate x:Key="comboboxItemTemplate">
+            <TextBlock Text="{Binding Converter={StaticResource enumDisplayNameConverter}}"/>
+        </DataTemplate>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -26,6 +31,7 @@
             MinDate="{Binding MinDate, Mode=TwoWay}"
             MaxDate="{Binding MaxDate, Mode=TwoWay}"
             OutOfScopeVisibility="{Binding OutOfScopeVisibility, Mode=TwoWay}"
+            NavigationDirection="{Binding NavigationDirection, Mode=TwoWay}"
             MinDisplayMode="{Binding MinDisplayMode, Mode=TwoWay}"
             MaxDisplayMode="{Binding MaxDisplayMode, Mode=TwoWay}"/>
         <ScrollViewer 
@@ -66,8 +72,8 @@
                     Width="180"
                     Header="DisplayMode"
                     SelectedItem="{Binding ElementName=sfCalendar, Path=DisplayMode, Mode=TwoWay}"
-                    ItemsSource="{core:EnumValuesExtension Type=calendar:CalendarDisplayMode}"/> 
-                
+                    ItemsSource="{core:EnumValuesExtension Type=calendar:CalendarDisplayMode}"/>
+
                 <ComboBox
                     Margin="5"
                     Width="180"
@@ -75,6 +81,15 @@
                     Header="OutOfScopeVisibility"
                     SelectedItem="{Binding OutOfScopeVisibility, Mode=TwoWay}"
                     ItemsSource="{core:EnumValuesExtension Type=calendar:OutOfScopeVisibility}"/>
+
+                <ComboBox
+                    Margin="5"
+                    Width="180"
+                    SelectedIndex="1"
+                    Header="NavigationDirection"
+                    ItemTemplate="{StaticResource comboboxItemTemplate}"
+                    SelectedItem="{Binding NavigationDirection, Mode=TwoWay}"
+                    ItemsSource="{core:EnumValuesExtension Type=Orientation}"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

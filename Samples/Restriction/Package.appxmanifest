@@ -7,20 +7,20 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="0f1e7c10-ee02-44ef-99f7-6e9a57240c85"
-    Publisher="CN=PrabakaranSangameswa"
+    Name="39493e62-bcd0-41e9-b237-8e2b7874a554"
+    Publisher="CN=NiranjanKumarGopalan"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="0f1e7c10-ee02-44ef-99f7-6e9a57240c85" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="39493e62-bcd0-41e9-b237-8e2b7874a554" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Restriction</DisplayName>
-    <PublisherDisplayName>PrabakaranSangameswa</PublisherDisplayName>
+    <PublisherDisplayName>NiranjanKumarGopalan</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17134.0" MaxVersionTested="10.0.17134.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
   </Dependencies>
 
   <Resources>
@@ -43,7 +43,4 @@
     </Application>
   </Applications>
 
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>

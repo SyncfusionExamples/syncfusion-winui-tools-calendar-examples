@@ -1,7 +1,11 @@
-﻿using Syncfusion.UI.Xaml.Calendar;
+﻿using Microsoft.UI.Xaml.Controls;
+using Syncfusion.UI.Xaml.Calendar;
 using Syncfusion.UI.Xaml.Core;
-using Syncfusion.UI.Xaml.Editors;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Restriction
 {
@@ -13,6 +17,8 @@ namespace Restriction
         private CalendarDisplayMode minDisplayMode = CalendarDisplayMode.Month;
         private CalendarDisplayMode maxDisplayMode = CalendarDisplayMode.Century;
         private OutOfScopeVisibility outOfScopeVisibility = OutOfScopeVisibility.Hidden;
+        private Orientation navigationDirection = Orientation.Horizontal;
+
         public CalendarDisplayMode MinDisplayMode
         {
             get { return minDisplayMode; }
@@ -57,6 +63,20 @@ namespace Restriction
             {
                 outOfScopeVisibility = value;
                 this.RaisePropertyChanged(nameof(this.OutOfScopeVisibility));
+
+            }
+        }
+
+        public Orientation NavigationDirection
+        {
+            get
+            {
+                return navigationDirection;
+            }
+            set
+            {
+                navigationDirection = value;
+                this.RaisePropertyChanged(nameof(this.NavigationDirection));
 
             }
         }
