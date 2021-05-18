@@ -41,17 +41,17 @@
                 <ComboBox
                     Margin="5"
                     Width="180"
-                    Header="TodayHighlightMode"
-                    SelectedItem="{Binding TodayHighlightMode, Mode=TwoWay}"
+                    Header="SelectionShape"
+                    SelectedItem="{Binding SelectionShape, Mode=TwoWay}"
                     HorizontalAlignment="Center"
-                    ItemsSource="{core:EnumValuesExtension Type=calendar:CalendarItemHighlightMode}"/>
+                    ItemsSource="{core:EnumValuesExtension Type=calendar:SelectionShape}"/>
                 <ComboBox
                     Margin="5"
                     Width="180"
                     Header="SelectionHighlightMode"
                     SelectedItem="{Binding SelectionHighlightMode, Mode=TwoWay}"
                     HorizontalAlignment="Center"
-                    ItemsSource="{core:EnumValuesExtension Type=calendar:CalendarItemHighlightMode}"/>
+                    ItemsSource="{core:EnumValuesExtension Type=calendar:SelectionHighlightMode}"/>
                 <ComboBox
                     Margin="5"
                     Width="180"
