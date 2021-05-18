@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.DataContext>
-        <local:CalendarViewModel/>
+        <local:CalendarViewModel />
     </Page.DataContext>
 
     <Grid>
@@ -26,7 +26,9 @@
             MaxDate="{Binding MaxDate, Mode=TwoWay}"
             OutOfScopeVisibility="{Binding OutOfScopeVisibility, Mode=TwoWay}"
             MinDisplayMode="{Binding MinDisplayMode, Mode=TwoWay}"
-            MaxDisplayMode="{Binding MaxDisplayMode, Mode=TwoWay}"/>
+            MaxDisplayMode="{Binding MaxDisplayMode, Mode=TwoWay}"
+            NavigationDirection ="{Binding NavigationDirection, Mode=TwoWay}"
+            />
         <ScrollViewer 
             VerticalAlignment="Center"
             HorizontalAlignment="Center" 
@@ -74,6 +76,13 @@
                     Header="OutOfScopeVisibility"
                     SelectedItem="{Binding OutOfScopeVisibility, Mode=TwoWay}"
                     ItemsSource="{core:EnumValuesExtension Type=calendar:OutOfScopeVisibility}"/>
+                <ComboBox
+                    Margin="5"
+                    Width="180"
+                    SelectedIndex="1"
+                    Header="NavigationDirection"
+                    SelectedItem="{Binding Converter={local:StringToEnumValueConverter Type=Orientation},ElementName=Calendar, Path=NavigationDirection, Mode=TwoWay}"
+                    ItemsSource="{local:EnumToStringValuesExtension Type=Orientation}"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

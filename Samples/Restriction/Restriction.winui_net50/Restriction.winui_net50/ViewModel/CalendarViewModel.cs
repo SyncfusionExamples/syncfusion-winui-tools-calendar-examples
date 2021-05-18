@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace Restriction
 {
@@ -16,6 +17,7 @@ namespace Restriction
         private CalendarDisplayMode minDisplayMode = CalendarDisplayMode.Month;
         private CalendarDisplayMode maxDisplayMode = CalendarDisplayMode.Century;
         private OutOfScopeVisibility outOfScopeVisibility = OutOfScopeVisibility.Hidden;
+        private Orientation navigationDirection = Orientation.Vertical;
         public CalendarDisplayMode MinDisplayMode
         {
             get { return minDisplayMode; }
@@ -60,6 +62,20 @@ namespace Restriction
             {
                 outOfScopeVisibility = value;
                 this.RaisePropertyChanged(nameof(this.OutOfScopeVisibility));
+
+            }
+        }
+
+        public Orientation NavigationDirection
+        {
+            get
+            {
+                return navigationDirection;
+            }
+            set
+            {
+                navigationDirection = value;
+                this.RaisePropertyChanged(nameof(this.NavigationDirection));
 
             }
         }
